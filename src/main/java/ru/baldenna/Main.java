@@ -104,7 +104,7 @@ public class Main {
             fileDetails.forEach(dirResult -> {
                 directorySize.addAndGet(dirResult.size);
                 if (filesFound.incrementAndGet() % 10000 == 0) {
-                    System.out.print("Processed files " + filesFound.get() + ". Active threads " + Math.min(executorService.getActiveCount(), 1));
+                    System.out.println("Processed files " + filesFound.get() + ". Active threads " + Math.min(executorService.getActiveCount(), 1));
                 }
             });
 
@@ -120,7 +120,7 @@ public class Main {
                 }
 
                 if (filesFound.incrementAndGet() % 10000 == 0) {
-                    System.out.print("Processed files " + filesFound.get() + ". Active threads " + executorService.getActiveCount());
+                    System.out.println("Processed files " + filesFound.get() + ". Active threads " + executorService.getActiveCount());
                 }
                 directorySize.addAndGet(curFileSize);
             }
